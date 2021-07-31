@@ -3,7 +3,7 @@ import ScrollReveal from 'scrollreveal'
 
 import NewsletterForm from '../forms/NewsletterForm'
 
-function Hero({ title, content, illustration: Illustration }) {
+function Hero({ title, content1, content2, illustration: Illustration }) {
 	const scrollRevealRef = useRef([])
 
 	useEffect(() => {
@@ -41,15 +41,21 @@ function Hero({ title, content, illustration: Illustration }) {
 								ref={(el) => (scrollRevealRef.current[1] = el)}
 								className="px-16 prose prose-xl is-revealing md:px-0"
 							>
-								{content}
+								{content1}
+							</p>
+							<p
+								ref={(el) => (scrollRevealRef.current[1] = el)}
+								className="px-16 prose prose-xl is-revealing md:px-0"
+							>
+								{content2}
 							</p>
 						</div>
 
 						<div ref={(el) => (scrollRevealRef.current[2] = el)}>
-							<NewsletterForm
+							{/* <NewsletterForm
 								className="max-w-md m-0 mt-8 md:flex"
 								submit="Get early access"
-							/>
+							/> */}
 						</div>
 					</div>
 
